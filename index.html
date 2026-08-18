@@ -5,121 +5,286 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dune Dawes | Aesthetic Coaching</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,system-ui,sans-serif;background:#000;color:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#050505;
+  color:#e8e0d0;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(180,120,40,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(120,40,20,0.06) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
 a{color:inherit;text-decoration:none}
-.wrap{max-width:640px;margin:0 auto;padding:0 24px}
-.hero{padding:100px 0 70px;text-align:center;border-bottom:1px solid #111}
-.hero .name{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#d4af37;margin-bottom:18px}
-.hero h1{font-size:clamp(36px,7vw,50px);font-weight:700;letter-spacing:-1.5px;line-height:1.08;margin-bottom:16px}
-.hero .sub{font-size:16px;color:#888;max-width:400px;margin:0 auto 32px}
-.btn{display:inline-block;background:#d4af37;color:#000;font-weight:600;font-size:14px;padding:15px 28px;border-radius:8px}
-.btn:hover{opacity:.9}
-.btn-ghost{background:transparent;border:1px solid #333;color:#fff;margin-left:10px}
-.btn-ghost:hover{border-color:#d4af37;color:#d4af37}
-.btn-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-section{padding:64px 0;border-bottom:1px solid #111}
-section h2{font-size:24px;font-weight:700;letter-spacing:-.5px;margin-bottom:10px}
-.lead{color:#666;font-size:15px;margin-bottom:24px}
-.story p{color:#aaa;font-size:16px;margin-bottom:14px}
-.story strong{color:#fff}
-.features{display:grid;gap:12px}
-.feature{background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:20px 22px}
-.feature h3{font-size:15px;font-weight:600;margin-bottom:4px;color:#d4af37}
-.feature p{color:#777;font-size:14px;margin:0}
-.offer{background:#0a0a0a;border:1px solid #1a1a1a;border-radius:16px;padding:36px 28px;text-align:center}
-.offer .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#d4af37;font-weight:600}
-.offer .price{font-size:40px;font-weight:700;margin:12px 0 6px}
-.offer .price span{font-size:15px;font-weight:500;color:#555}
-.offer ul{list-style:none;text-align:left;max-width:300px;margin:24px auto}
-.offer li{padding:10px 0;border-bottom:1px solid #151515;font-size:14.5px;color:#aaa}
+.wrap{max-width:680px;margin:0 auto;padding:0 24px}
+
+/* ORNATE DIVIDER */
+.ornament{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin:0 auto 28px;max-width:280px;
+}
+.ornament::before,.ornament::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,#c9a227);
+}
+.ornament span{
+  color:#c9a227;font-size:14px;letter-spacing:2px;
+}
+
+/* HERO */
+.hero{
+  padding:110px 0 80px;
+  text-align:center;
+  position:relative;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at center top, rgba(201,162,39,0.07) 0%, transparent 55%);
+  pointer-events:none;
+}
+.hero .crest{
+  font-size:28px;margin-bottom:18px;
+  filter:drop-shadow(0 0 20px rgba(201,162,39,0.35));
+}
+.hero .name{
+  font-family:'Cinzel',serif;
+  font-size:13px;font-weight:600;
+  letter-spacing:5px;text-transform:uppercase;
+  color:#c9a227;margin-bottom:20px;
+}
+.hero h1{
+  font-family:'Cinzel',serif;
+  font-size:clamp(34px,7vw,48px);
+  font-weight:700;letter-spacing:1px;
+  line-height:1.15;margin-bottom:18px;
+  color:#f5ecd7;
+  text-shadow:0 0 40px rgba(201,162,39,0.15);
+}
+.hero .sub{
+  font-size:15px;color:#8a8070;
+  max-width:380px;margin:0 auto 36px;
+}
+
+.btn{
+  display:inline-block;
+  background:linear-gradient(135deg,#c9a227 0%,#a67c1a 100%);
+  color:#0a0800;font-weight:600;font-size:13px;
+  letter-spacing:1px;text-transform:uppercase;
+  padding:16px 30px;border-radius:4px;
+  border:1px solid #e0c040;
+  box-shadow:0 0 24px rgba(201,162,39,0.2);
+  transition:box-shadow .2s,transform .15s;
+}
+.btn:hover{box-shadow:0 0 36px rgba(201,162,39,0.35);transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;
+  border:1px solid #3a3428;color:#c9a227;
+  box-shadow:none;margin-left:10px;
+}
+.btn-ghost:hover{border-color:#c9a227;box-shadow:0 0 16px rgba(201,162,39,0.15)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* SECTIONS */
+section{
+  padding:70px 0;
+  border-top:1px solid #1a1810;
+  position:relative;
+}
+section h2{
+  font-family:'Cinzel',serif;
+  font-size:22px;font-weight:600;
+  letter-spacing:1px;color:#f0e6d0;
+  margin-bottom:8px;
+}
+.lead{color:#6a6258;font-size:14px;margin-bottom:28px}
+.story p{color:#9a9080;font-size:15px;margin-bottom:14px}
+.story strong{color:#e8dcc0}
+
+.features{display:grid;gap:14px}
+.feature{
+  background:linear-gradient(145deg,#0c0b09 0%,#080706 100%);
+  border:1px solid #1f1c14;
+  border-radius:8px;padding:22px 24px;
+  position:relative;
+  overflow:hidden;
+}
+.feature::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,#c9a22744,transparent);
+}
+.feature h3{
+  font-family:'Cinzel',serif;
+  font-size:14px;font-weight:600;
+  letter-spacing:.5px;color:#c9a227;
+  margin-bottom:6px;
+}
+.feature p{color:#7a7268;font-size:13.5px;margin:0}
+
+/* OFFER */
+.offer{
+  background:linear-gradient(160deg,#0e0c08 0%,#090807 100%);
+  border:1px solid #2a2418;
+  border-radius:12px;padding:40px 28px;
+  text-align:center;
+  box-shadow:0 0 60px rgba(201,162,39,0.06), inset 0 1px 0 rgba(201,162,39,0.08);
+}
+.offer .label{
+  font-family:'Cinzel',serif;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:#c9a227;font-weight:600;
+}
+.offer h2{margin:10px 0 4px;font-size:22px}
+.offer .price{
+  font-family:'Cinzel',serif;
+  font-size:42px;font-weight:700;margin:14px 0 6px;color:#f5ecd7;
+}
+.offer .price span{font-size:14px;font-weight:500;color:#6a6050;font-family:'Inter',sans-serif}
+.offer ul{list-style:none;text-align:left;max-width:300px;margin:26px auto}
+.offer li{
+  padding:11px 0;border-bottom:1px solid #1a1710;
+  font-size:14px;color:#9a9080;
+}
 .offer li:last-child{border-bottom:none}
-.offer li::before{content:"–";margin-right:10px;color:#d4af37}
-.cta-final{text-align:center;padding:72px 0 56px}
-.cta-final h2{font-size:26px;margin-bottom:10px}
-.cta-final p{color:#666;margin-bottom:28px}
-footer{padding:32px 0 48px;text-align:center;color:#444;font-size:12px}
-footer a{color:#d4af37}
-@media(max-width:520px){.btn-ghost{margin-left:0}.hero{padding:70px 0 50px}}
+.offer li::before{content:"◆";margin-right:12px;color:#c9a227;font-size:8px;vertical-align:middle}
+
+/* CTA */
+.cta-final{text-align:center;padding:80px 0 60px}
+.cta-final h2{
+  font-family:'Cinzel',serif;font-size:24px;
+  letter-spacing:1px;margin-bottom:10px;color:#f0e6d0;
+}
+.cta-final p{color:#6a6258;margin-bottom:30px;font-size:14px}
+
+footer{
+  padding:36px 0 50px;text-align:center;
+  color:#3a362e;font-size:11px;
+  border-top:1px solid #14120e;
+}
+footer a{color:#c9a227}
+
+@media(max-width:520px){
+  .btn-ghost{margin-left:0}
+  .hero{padding:80px 0 60px}
+}
 </style>
 </head>
 <body>
+
 <header class="hero">
-<div class="wrap">
-<div class="name">Dune Dawes</div>
-<h1>Aesthetic Coaching</h1>
-<p class="sub">For guys who are done looking mid after years in the gym.</p>
-<div class="btn-row">
-<a class="btn" href="https://dunedawes.github.io/Coaching/">Apply</a>
-<a class="btn btn-ghost" href="#blueprint">Get the Blueprint</a>
-</div>
-</div>
+  <div class="wrap">
+    <div class="crest">⚜</div>
+    <div class="name">Dune Dawes</div>
+    <div class="ornament"><span>◆</span></div>
+    <h1>Aesthetic Coaching</h1>
+    <p class="sub">For guys who are done looking mid after years in the gym.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://dunedawes.github.io/Coaching/">Apply</a>
+      <a class="btn btn-ghost" href="#blueprint">Get the Blueprint</a>
+    </div>
+  </div>
 </header>
+
 <section>
-<div class="wrap story">
-<h2>You’re not lacking effort</h2>
-<p class="lead">You’re lacking a real system.</p>
-<p>Most guys run random splits, eat whatever, and wonder why they still look the same 2 years later.</p>
-<p>Aesthetics isn’t more sets. It’s knowing what to prioritize — structure, diet, recovery, and whether your hormones are even supporting the look you want.</p>
-<p><strong>That’s what I coach.</strong></p>
-</div>
+  <div class="wrap story">
+    <div class="ornament"><span>◆</span></div>
+    <h2>You’re not lacking effort</h2>
+    <p class="lead">You’re lacking a real system.</p>
+    <p>Most guys run random splits, eat whatever, and wonder why they still look the same 2 years later.</p>
+    <p>Aesthetics isn’t more sets. It’s knowing what to prioritize — structure, diet, recovery, and whether your hormones are even supporting the look you want.</p>
+    <p><strong>That’s what I coach.</strong></p>
+  </div>
 </section>
+
 <section id="blueprint">
-<div class="wrap">
-<h2>The Aesthetic Blueprint</h2>
-<p class="lead">The system I actually use.</p>
-<div class="features">
-<div class="feature"><h3>Training</h3><p>Splits built around shoulders, upper chest, lats, and the V-taper — not generic bro volume.</p></div>
-<div class="feature"><h3>Diet</h3><p>How to bulk, cut, and recomp without killing your face or energy.</p></div>
-<div class="feature"><h3>Compounds</h3><p>Educational breakdown of TRT, Anavar, peptides, etc. What they do and what to watch for. No protocols.</p></div>
-<div class="feature"><h3>Standards</h3><p>How to not fall off the second life gets inconvenient.</p></div>
-</div>
-</div>
+  <div class="wrap">
+    <div class="ornament"><span>◆</span></div>
+    <h2>The Aesthetic Blueprint</h2>
+    <p class="lead">The system I actually use.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Training</h3>
+        <p>Splits built around shoulders, upper chest, lats, and the V-taper — not generic bro volume.</p>
+      </div>
+      <div class="feature">
+        <h3>Diet</h3>
+        <p>How to bulk, cut, and recomp without killing your face or energy.</p>
+      </div>
+      <div class="feature">
+        <h3>Compounds</h3>
+        <p>Educational breakdown of TRT, Anavar, peptides, etc. What they do and what to watch for. No protocols.</p>
+      </div>
+      <div class="feature">
+        <h3>Standards</h3>
+        <p>How to not fall off the second life gets inconvenient.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
 <section>
-<div class="wrap">
-<div class="offer">
-<div class="label">Digital</div>
-<h2 style="margin:8px 0 4px">Aesthetic Blueprint</h2>
-<div class="price">$35 <span>one-time</span></div>
-<p style="color:#555;font-size:14px">Instant access</p>
-<ul>
-<li>Training & diet frameworks</li>
-<li>Bulk / cut / recomp structure</li>
-<li>Compound education</li>
-<li>Recovery & markers</li>
-</ul>
-<a class="btn" href="https://dunedawes.github.io/Coaching/">Get it</a>
-</div>
-</div>
+  <div class="wrap">
+    <div class="offer">
+      <div class="label">Digital</div>
+      <h2>Aesthetic Blueprint</h2>
+      <div class="price">$35 <span>one-time</span></div>
+      <p style="color:#5a5248;font-size:13px">Instant access</p>
+      <ul>
+        <li>Training & diet frameworks</li>
+        <li>Bulk / cut / recomp structure</li>
+        <li>Compound education</li>
+        <li>Recovery & markers</li>
+      </ul>
+      <a class="btn" href="https://dunedawes.github.io/Coaching/">Get it</a>
+    </div>
+  </div>
 </section>
+
 <section>
-<div class="wrap">
-<h2>1:1 Coaching</h2>
-<p class="lead">If you want it handled with you, not just a PDF.</p>
-<div class="features">
-<div class="feature"><h3>Physique + face</h3><p>Built around actually looking better — not just chasing numbers on a bar.</p></div>
-<div class="feature"><h3>Direct access</h3><p>You don’t sit around guessing through a bulk or cut.</p></div>
-<div class="feature"><h3>Limited spots</h3><p>Only taking people who’ll actually run it.</p></div>
-</div>
-<div style="text-align:center;margin-top:32px">
-<a class="btn" href="https://dunedawes.github.io/Coaching/">Apply — $300/mo</a>
-</div>
-</div>
+  <div class="wrap">
+    <div class="ornament"><span>◆</span></div>
+    <h2>1:1 Coaching</h2>
+    <p class="lead">If you want it handled with you, not just a PDF.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Physique + face</h3>
+        <p>Built around actually looking better — not just chasing numbers on a bar.</p>
+      </div>
+      <div class="feature">
+        <h3>Direct access</h3>
+        <p>You don’t sit around guessing through a bulk or cut.</p>
+      </div>
+      <div class="feature">
+        <h3>Limited spots</h3>
+        <p>Only taking people who’ll actually run it.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a class="btn" href="https://dunedawes.github.io/Coaching/">Apply — $300/mo</a>
+    </div>
+  </div>
 </section>
+
 <div class="cta-final">
-<div class="wrap">
-<h2>Look how you want on purpose.</h2>
-<p>Or keep doing what you’ve been doing.</p>
-<a class="btn" href="https://dunedawes.github.io/Coaching/">Apply</a>
+  <div class="wrap">
+    <div class="ornament"><span>⚜</span></div>
+    <h2>Look how you want on purpose.</h2>
+    <p>Or keep doing what you’ve been doing.</p>
+    <a class="btn" href="https://dunedawes.github.io/Coaching/">Apply</a>
+  </div>
 </div>
-</div>
+
 <footer>
-<div class="wrap">
-<p>Dune Dawes · Educational only · Not medical advice</p>
-<p style="margin-top:8px"><a href="https://instagram.com/dunedawes">Instagram</a> · <a href="https://tiktok.com/@dunedawes">TikTok</a></p>
-</div>
+  <div class="wrap">
+    <p>Dune Dawes · Educational only · Not medical advice</p>
+    <p style="margin-top:10px"><a href="https://instagram.com/dunedawes">Instagram</a> · <a href="https://tiktok.com/@dunedawes">TikTok</a></p>
+  </div>
 </footer>
+
 </body>
 </html>
