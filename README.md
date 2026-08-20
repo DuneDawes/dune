@@ -1,2 +1,2 @@
 # dune
-Dune Dawes — Aesthetic Coaching &amp; Blueprint
+Dune Dawes — Aesthetic Coaching & Phoenix Protocol
